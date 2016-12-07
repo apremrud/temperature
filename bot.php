@@ -15,12 +15,23 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
+			
+			if($text =='t')
+			{
 			$messages = [
 				'type' => 'text',
 				'text' => 'test:'.$text
+			];	
+			}
+			else
+			{
+			$messages = [
+				'type' => 'text',
+				'text' => 'No Key : '.$text
 			];
+			}
+			// Build message to reply back
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
