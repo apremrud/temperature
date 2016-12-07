@@ -57,7 +57,15 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
-$json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1'); 
-$data = json_decode($json);
-$text2 = $date['channel']['id'];
-echo '111123'.$text2;
+
+$json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1');
+
+$array = json_decode($json);
+
+$urlPoster=array();
+foreach ($array as $value) { 
+    $urlPoster[]=$value->urlPoster;
+}
+
+print_r($urlPoster);
+
