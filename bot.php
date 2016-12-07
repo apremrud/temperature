@@ -26,7 +26,7 @@ $t = $json_data['feeds']['0']['field1'];
 $h = $json_data['feeds']['0']['field2'];			
 			$messages = [
 				'type' => 'text',
-				'text' => 'อุณหภูมิ:'.$t.'°C'.'ความชื้น:'.$h.'%'
+				'text' => 'อุณหภูมิ:'.$t-3.'°C '.' ความชื้น:'.$h.'%'
 			];	
 			}
 			else
