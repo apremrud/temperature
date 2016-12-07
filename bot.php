@@ -24,7 +24,7 @@ $text2 = $date['feeds']['field1'];
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'test:'.$text2
+				'text' => 'test2:'.$text2
 			];	
 			}
 			else
