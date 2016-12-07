@@ -18,10 +18,14 @@ if (!is_null($events['events'])) {
 			
 			if($text =='t')
 			{
-
+$json_array = file_get_contents("https://api.thingspeak.com/channels/83655/feed.json?results=1");
+//$json_array = iconv('UTF-16', 'UTF-8', $json_array);
+$json_data=json_decode($json_array,true);
+//print_r($json_data);
+$t = $json_data['feeds']['0']['field1'];
 			$messages = [
 				'type' => 'text',
-				'text' => 'test2:'.$text2
+				'text' => 'อุณหภูมิ:'.$t.'°C'
 			];	
 			}
 			else
@@ -58,11 +62,6 @@ if (!is_null($events['events'])) {
 }
 echo "OK";
 
-$json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1');
 
-$json_array = file_get_contents("https://api.thingspeak.com/channels/83655/feed.json?results=1");
-//$json_array = iconv('UTF-16', 'UTF-8', $json_array);
-$json_data=json_decode($json_array,true);
-print_r($json_data);
-echo $json_data['feeds']['0']['field1'];
+
 
