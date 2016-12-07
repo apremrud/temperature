@@ -18,9 +18,6 @@ if (!is_null($events['events'])) {
 			
 			if($text =='t')
 			{
-$json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1'); 
-$data = json_decode($json);
-$text2 = $date['channel']['id'];
 
 			$messages = [
 				'type' => 'text',
@@ -60,3 +57,7 @@ $text2 = $date['channel']['id'];
 	}
 }
 echo "OK";
+$json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1'); 
+$data = json_decode($json);
+$text2 = $date['channel']['id'];
+echo $text2;
