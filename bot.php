@@ -20,11 +20,7 @@ if (!is_null($events['events'])) {
 			{
 $json = file_get_contents('https://api.thingspeak.com/channels/83655/feed.json?results=1'); 
 $data = json_decode($json);
-for ($i=0;$i<3;$i++){
-$x1 = $data->controls[1][0];
-$x2 = $data->controls[1][1];
-$text2 = $x1."=".$x2;
-}
+$text2 = $date['feeds']['field1'];
 
 			$messages = [
 				'type' => 'text',
