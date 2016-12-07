@@ -22,7 +22,7 @@ $json_array = file_get_contents("https://api.thingspeak.com/channels/83655/feed.
 //$json_array = iconv('UTF-16', 'UTF-8', $json_array);
 $json_data=json_decode($json_array,true);
 //print_r($json_data);
-$t = $json_data['feeds']['0']['field1']-3;
+$t = $json_data['feeds']['0']['field1'];
 $h = $json_data['feeds']['0']['field2'];			
 			$messages = [
 				'type' => 'text',
